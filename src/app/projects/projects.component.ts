@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../project';
 import { PROJECTS } from '../mock-projects';
+import { ProjectService } from '../project.service';
 
 @Component({
   selector: 'app-projects',
@@ -11,14 +12,14 @@ export class ProjectsComponent implements OnInit {
     title: string = 'Projects';
     projects: Project[] = [];
     selectedProject: Project;
-  constructor() { }
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
     this.getProjects();
   }
 
   getProjects(): void{
-    this.projects = PROJECTS;
+    this.projects = this.projectService.getProjects();
   }
   onSelect(project: Project){
     //console.log((<HTMLElement>event.target).id);
