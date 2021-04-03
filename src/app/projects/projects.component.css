@@ -21,3 +21,6 @@ li{
   background-color: #7bdae0;
   color: #000;
 }
+.selected span{
+  color: red;
+}

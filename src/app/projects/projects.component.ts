@@ -10,8 +10,7 @@ import { PROJECTS } from '../mock-projects';
 export class ProjectsComponent implements OnInit {
     title: string = 'Projects';
     projects: Project[] = [];
-    isShowDetails: boolean = false;
-    projectIdToShow:string;
+    selectedProject: Project;
   constructor() { }
 
   ngOnInit(): void {
@@ -21,11 +20,13 @@ export class ProjectsComponent implements OnInit {
   getProjects(): void{
     this.projects = PROJECTS;
   }
-  showDetails(event:Event){
-    console.log((<HTMLElement>event.target).id);
-    this.projectIdToShow = (<HTMLElement>event.target).id;
+  onSelect(project: Project){
+    //console.log((<HTMLElement>event.target).id);
+    //console.log(project)
+    this.selectedProject = project;
+    //this.projectIdToShow = (<HTMLElement>event.target).id;
     //this.isShowDetails = !this.isShowDetails
-    this.isShowDetails = true;
+    //dashboard.isShowDetails = true;
   }
 
 }

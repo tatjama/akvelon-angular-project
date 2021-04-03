@@ -2,14 +2,16 @@
   <h2>{{ title | uppercase }} </h2>
 </header>
 <ul class="projects">
-  <li *ngFor="let project of projects">
+  <li [class.selected] = "project === selectedProject" *ngFor="let project of projects">
     <div class="project">
       <span>{{ project.name }}</span>
-      <button class="details" [id]="project.id" (click)="showDetails($event)"> Show Details</button>
+      <button class="details" [id]="project.id" (click)="onSelect(project)"> Show Details</button>
     </div>
 
   </li>
-  {{ projectIdToShow }}
-  <app-project-detail *ngIf="isShowDetails"></app-project-detail>
-
+<!--<div *ngIf="selectedProject">Name: {{selectedProject.name}}
+  <p> id: {{selectedProject.id}} </p>
+  <p> date: {{selectedProject.date}} </p>
+</div>-->
 </ul>
+<app-project-detail [project] = "selectedProject"></app-project-detail>

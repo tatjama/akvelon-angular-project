@@ -1,3 +1,9 @@
-<header>
-  <p>project-detail works!</p>
-</header>
+<div class="project-detail" *ngIf="project">Name: {{project.name}}
+
+  <p> id: {{project.id}} </p>
+  <p> date: {{project.date}} </p>
+  <ul>
+    <li *ngFor="let task of project.tasks"> {{task.title}} </li>
+  </ul>
+</div>
+

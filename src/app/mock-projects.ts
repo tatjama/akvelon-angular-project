@@ -83,6 +83,13 @@ export const PROJECTS: Project[] = [
        description: 'You ned TODO task 9',
        date: '03.04.2021',
        estimate: 10
+      },
+      {
+        id: 10,
+        title: 'Task 10',
+        description: 'You ned TODO task 10',
+        date: '03.04.2021',
+        estimate: 11
       }
     ]
   },
