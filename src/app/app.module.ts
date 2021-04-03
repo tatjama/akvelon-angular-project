@@ -8,6 +8,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessagesComponent } from './messages/messages.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { TaskDetailComponent } from './task-detail/task-detail.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { MessagesComponent } from './messages/messages.component';
     ProjectsComponent,
     ProjectDetailComponent,
     DashboardComponent,
-    MessagesComponent
+    MessagesComponent,
+    TasksComponent,
+    TaskDetailComponent
   ],
   imports: [
     BrowserModule,

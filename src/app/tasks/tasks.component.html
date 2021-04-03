@@ -1,0 +1,9 @@
+<ol>
+  <li *ngFor="let task of tasks">
+    <div class="task">
+        <h2> {{ task.title }} </h2>
+        <button type="button" (click)="onSelect(task)"> Task detail </button>
+    </div>
+     <app-task-detail *ngIf = "selectedTask === task" [task] = "selectedTask"></app-task-detail>
+  </li>
+</ol>

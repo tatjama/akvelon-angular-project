@@ -1,0 +1,19 @@
+.task{
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  background-color: #fac7df;
+  padding: 10px;
+  margin: 10px auto;
+}
+.task button{
+  background-color: #eb82b3;
+  color: #fff;
+}
+.task button:hover{
+  background-color: #fafafa;
+  color: #000;
+}
+ol{
+  list-style: none;
+}

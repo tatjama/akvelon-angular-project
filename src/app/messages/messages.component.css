@@ -4,7 +4,7 @@
   bottom: 10px;
   display: flex;
   align-items: center;
-
+  z-index: -1;
 }
 .message button{
   background-color: #06a590;

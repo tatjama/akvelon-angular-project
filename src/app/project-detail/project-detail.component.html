@@ -1,9 +1,12 @@
-<div class="project-detail" *ngIf="project">Name: {{project.name}}
-
-  <p> id: {{project.id}} </p>
-  <p> date: {{project.date}} </p>
-  <ol>
+<div class="project-detail" *ngIf="project">
+  <header>
+      <h1> {{ project.name |uppercase }} </h1>
+  </header>
+  <p> id: {{ project.id }} </p>
+  <p> date: {{ project.date }} </p>
+  <app-tasks [tasks] = "project.tasks"></app-tasks>
+  <!--<ol>
     <li *ngFor="let task of project.tasks"> {{task.title}} </li>
-  </ol>
+  </ol>-->
 </div>
 
