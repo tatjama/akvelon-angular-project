@@ -15,8 +15,10 @@ export class TasksComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSelect(task){
+  onSelect(task): void {
+    this.selectedTask === task? this.selectedTask = undefined:
     this.selectedTask = task;
+
   }
 
 }
