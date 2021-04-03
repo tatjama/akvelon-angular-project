@@ -10,6 +10,8 @@ import { PROJECTS } from '../mock-projects';
 export class ProjectsComponent implements OnInit {
     title: string = 'Projects';
     projects: Project[] = [];
+    isShowDetails: boolean = false;
+    projectIdToShow:string;
   constructor() { }
 
   ngOnInit(): void {
@@ -18,6 +20,12 @@ export class ProjectsComponent implements OnInit {
 
   getProjects(): void{
     this.projects = PROJECTS;
+  }
+  showDetails(event:Event){
+    console.log((<HTMLElement>event.target).id);
+    this.projectIdToShow = (<HTMLElement>event.target).id;
+    //this.isShowDetails = !this.isShowDetails
+    this.isShowDetails = true;
   }
 
 }

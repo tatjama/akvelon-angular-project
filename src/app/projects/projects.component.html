@@ -3,8 +3,13 @@
 </header>
 <ul class="projects">
   <li *ngFor="let project of projects">
-    <span>{{ project.name }}</span>
-    <button class="details">Details</button>
+    <div class="project">
+      <span>{{ project.name }}</span>
+      <button class="details" [id]="project.id" (click)="showDetails($event)"> Show Details</button>
+    </div>
+
   </li>
+  {{ projectIdToShow }}
+  <app-project-detail *ngIf="isShowDetails"></app-project-detail>
 
 </ul>

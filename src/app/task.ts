@@ -1,4 +1,4 @@
-export interface Task{
+export class Task{
   id: number;
   title: string;
   description: string;
