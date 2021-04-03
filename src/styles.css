@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  padding: 100px;
+}
+h1{
+  font-size: 3em;
+  color: #369;
+}
+h2{
+  font-size: 2em;
+}
+h3{
+  font-size: 1.5em
+}
+p{
+  font-size: 1em;
+}
