@@ -27,6 +27,9 @@ I. COMPONENTS
 6. Mock-project Component
   - fake api
 
+7. Messages Component
+  - show message from project service
+
 II. INTERFACES
 1. Project interface
   -id,
