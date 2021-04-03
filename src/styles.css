@@ -5,14 +5,19 @@
   box-sizing: border-box;
 }
 body{
-  padding: 100px;
+  padding: 20px 40px;
+}
+header{
+  text-align: center;
+  padding: 10px;
 }
 h1{
-  font-size: 3em;
+  font-size: 1.5em;
   color: #369;
 }
 h2{
-  font-size: 2em;
+  font-size: 1.2em;
+  color: #399;
 }
 h3{
   font-size: 1.5em
