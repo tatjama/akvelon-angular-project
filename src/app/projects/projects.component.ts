@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../project';
-import { PROJECTS } from '../mock-projects';
 import { ProjectService } from '../project.service';
 
 @Component({
@@ -19,7 +18,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   getProjects(): void{
-    this.projects = this.projectService.getProjects();
+    this.projectService.getProjects().subscribe(projects =>this.projects = projects);
   }
   onSelect(project: Project){
     //console.log((<HTMLElement>event.target).id);
