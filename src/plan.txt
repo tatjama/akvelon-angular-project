@@ -1,0 +1,55 @@
+Akvelon Angular project PLAN
+
+
+I. COMPONENTS
+1. Root Component
+  - Title
+2. Projects Component
+  -Project List -show
+  -Add project - input name, id, date, submit
+
+3. Project Detail Component
+  -Project - show id, name, date
+  -Tasks List - show
+  -Add task - input title, id, date, description, estimate, submit
+  -Go back button
+  -Route
+
+4. Tasks Component
+  -Tasks List - show
+  -Add task - input title, id, date, description, estimate, submit,
+
+5. Task Detail Component
+  -Task - show id, name, date, description, estimate
+  -Go back button
+  -Route
+
+6. Mock-project Component
+  - fake api
+
+II. INTERFACES
+1. Project interface
+  -id,
+  -name,
+  -date
+2. Task interface
+  -id,
+  -title,
+  -description,
+  -date,
+  -estimate
+
+III. SERVICES
+1. Project service
+  -Observable httpClient - get projects, add projects
+
+2. Message service
+  -Add message
+
+3. fake API service
+
+IV. ROUTING
+1. Angular router
+
+V. STYLING
+1. CSS styles
