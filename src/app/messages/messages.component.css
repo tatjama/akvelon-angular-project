@@ -1,0 +1,23 @@
+.message{
+  color: #06a590;
+  position: fixed;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+
+}
+.message button{
+  background-color: #06a590;
+  color: #fff ;
+  margin-left: 15px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.message button:hover{
+  background-color:#84ddd1;
+  color:#000;
+}

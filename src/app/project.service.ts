@@ -7,15 +7,19 @@ import { Observable, of } from 'rxjs';
 import { PROJECTS } from './mock-projects';
 import { Project } from './project';
 
+//Service
+import { MessageService } from './message.service';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
 
-  constructor() { }
+  constructor(private messageService: MessageService) { }
 
   getProjects():Observable<Project[]> {
     const projects = of(PROJECTS);
+    this.messageService.add("Project Service message: fetched Projects")
     return projects
   }
 }
