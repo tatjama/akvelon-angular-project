@@ -16,7 +16,7 @@ export class ProjectsComponent implements OnInit {
     this.getProjects();
   }
 
-  getProjects(){
+  getProjects(): void{
     this.projects = PROJECTS;
   }
 

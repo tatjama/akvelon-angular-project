@@ -1,0 +1,12 @@
+span{
+  color:#038c96;
+  font-size: 1.2em;
+}
+.details{
+  background-color:#038c96;
+  color: #fff;
+}
+.details:hover{
+  background-color: #7bdae0;
+  color: #000;
+}
