@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 //Https
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {catchError, map, tap} from 'rxjs/operators';
 
 //Components
 import { PROJECTS } from './mock-projects';
@@ -15,11 +17,28 @@ import { MessageService } from './message.service';
 })
 export class ProjectService {
 
-  constructor(private messageService: MessageService) { }
+  private projectsUrl = 'http://localhost:3000/projects';
+  private tasksUrl = 'http://localhost:3000/tasks';
+
+  constructor(private http: HttpClient,  private messageService: MessageService) { }
+
+  private log(message:string){
+    this.messageService.add(`Project Service message: ${message}`)
+  }
 
   getProjects():Observable<Project[]> {
-    const projects = of(PROJECTS);
-    this.messageService.add("Project Service message: fetched Projects")
-    return projects
+    return this.http.get<Project[]>(this.projectsUrl)
+      .pipe(
+         tap(_ => this.log('fetched Projects')),
+         catchError( this.handleError<Project[]>("getProjects", []))
+        )
+  }
+
+  private handleError<T>(operation = 'operation', result?: T){
+      return (error: any): Observable<T> => {
+        console.error(error)
+        this.log(`${operation} failed: ${error.message} `)
+        return of(result as T)
+      }
   }
 }

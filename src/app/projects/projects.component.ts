@@ -22,7 +22,8 @@ export class ProjectsComponent implements OnInit {
   }
 
   getProjects(): void{
-    this.projectService.getProjects().subscribe(projects =>this.projects = projects);
+    this.projectService.getProjects()
+        .subscribe((data) => this.projects = data);
   }
   onSelect(project: Project){
     //console.log((<HTMLElement>event.target).id);
