@@ -1,13 +1,22 @@
 <header>
   <h2>{{ title | uppercase }} </h2>
 </header>
+<div>
+  <label id="new-project">Project name: </label>
+  <input for="new-project" #projectName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(projectName.value); projectName.value=''">
+    Add Project
+  </button>
+</div>
 <ul class="projects">
   <li *ngFor="let project of projects">
 
       <div class="project">
         <span>{{ project.name }}</span>
         <a routerLink = "/projectdetail/{{ project.id }}">
-          <button class="details" [id]="project.id" > Show Details</button>
+          <button class="details" [id]="project.id" [project] = "selectedProject" > Show Details</button>
         </a>
       </div>
 

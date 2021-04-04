@@ -26,6 +26,10 @@ export class ProjectService {
     this.messageService.add(`Project Service message: ${message}`)
   }
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
   getProjects(): Observable<Project[]> {
     return this.http.get<Project[]>(this.projectsUrl)
       .pipe(
@@ -35,10 +39,24 @@ export class ProjectService {
   }
 
   getProject(id: number): Observable<Project> {
+    const url = `${this.projectsUrl}/${id}`;
+    return this.http.get<Project>(url)
+        .pipe(
+          tap(_ => this.log(`fetched project id=${id}`)),
+          catchError(this.handleError<Project>(`getProject id=${id}`))
+        );
     const project = PROJECTS.find(p => p.id === id) as Project;
     this.messageService.add(`ProjectService: fetched project id=${id}`);
     return of(project);
   }
+
+  /** POST: add a new project to the server */
+    addProject(project: Project): Observable<Project> {
+    return this.http.post<Project>(this.projectsUrl, project, this.httpOptions).pipe(
+    tap((newProject: Project) => this.log(`added project w/ id=${newProject.id}`)),
+    catchError(this.handleError<Project>('addProject'))
+  );
+}
 
   private handleError<T>(operation = 'operation', result?: T){
       return (error: any): Observable<T> => {
