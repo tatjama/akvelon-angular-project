@@ -26,12 +26,18 @@ export class ProjectService {
     this.messageService.add(`Project Service message: ${message}`)
   }
 
-  getProjects():Observable<Project[]> {
+  getProjects(): Observable<Project[]> {
     return this.http.get<Project[]>(this.projectsUrl)
       .pipe(
          tap(_ => this.log('fetched Projects')),
          catchError( this.handleError<Project[]>("getProjects", []))
         )
+  }
+
+  getProject(id: number): Observable<Project> {
+    const project = PROJECTS.find(p => p.id === id) as Project;
+    this.messageService.add(`ProjectService: fetched project id=${id}`);
+    return of(project);
   }
 
   private handleError<T>(operation = 'operation', result?: T){

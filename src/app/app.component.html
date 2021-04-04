@@ -1,5 +1,11 @@
 <header>
   <h1> {{ title }} </h1>
 </header>
-<app-dashboard></app-dashboard>
+<nav>
+  <a routerLink="/dashboard">Home</a>
+  <a routerLink = "/projects">Projects</a>
+</nav>
+<router-outlet></router-outlet>
+
+<!--<app-dashboard></app-dashboard>-->
 <app-messages></app-messages>

@@ -1,5 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+//Router
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+//Service
+import { ProjectService } from '../project.service';
+
 import { Project } from '../project';
 
 @Component({
@@ -11,9 +17,24 @@ export class ProjectDetailComponent implements OnInit {
 
   @Input() project: Project;
 
-  constructor() { }
+  constructor(
+      private route: ActivatedRoute,
+      private projectService: ProjectService,
+      private location: Location
+      ) { }
 
   ngOnInit(): void {
+    this.getProject()
+  }
+
+  getProject(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.projectService.getProject(id)
+    .subscribe(project => this.project = project);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
