@@ -1,0 +1,15 @@
+button{
+  background-color: #369;
+  color: #fff;
+  width: 100%;
+  margin:10px 5px;
+}
+button:hover{
+  background-color: #a7c2dd;
+  color:#000;
+
+}
+input{
+  width: 100%;
+  margin: 5px;
+}
