@@ -16,7 +16,6 @@ import { Project } from '../project';
 export class ProjectDetailComponent implements OnInit {
 
    project: Project;
-   //selectedProject: Project = new Project();
    selectedProject: Project;
 
   constructor(

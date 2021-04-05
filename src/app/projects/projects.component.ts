@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 import { Project } from '../project';
 
 //Service
@@ -28,12 +27,7 @@ export class ProjectsComponent implements OnInit {
         .subscribe((data) => this.projects = data);
   }
 
-
-
   add(): void {
-    //name = name.trim();
-   //const tempProject = new Project();
-   //this.selectedProject.name = name;
    this.selectedProject.date = new Date().toUTCString();
 
     if (!this.selectedProject.name) { return; }
@@ -42,17 +36,4 @@ export class ProjectsComponent implements OnInit {
         this.projects.push(project);
       });
   }
-
-   /*genId(projects: Project[]): number {
-    return projects.length>0 ? Math.max(...projects.map(project => project.id))+1: 1;
-   }*/
-  //onSelect(project: Project){
-    //console.log((<HTMLElement>event.target).id);
-    //console.log(project)
-    //this.selectedProject = project;
-    //this.projectIdToShow = (<HTMLElement>event.target).id;
-    //this.isShowDetails = !this.isShowDetails
-    //dashboard.isShowDetails = true;
-//  }
-
 }

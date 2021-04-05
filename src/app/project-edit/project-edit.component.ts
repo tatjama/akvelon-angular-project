@@ -29,9 +29,6 @@ export class ProjectEditComponent implements OnInit {
   }
 
   add(): void {
-    //name = name.trim();
-   //const tempProject = new Project();
-   //this.selectedProject.name = name;
    this.addedProject.date = new Date().toUTCString();
     if (!this.addedProject.name) { return; }
     this.projectService.addProject(this.addedProject)

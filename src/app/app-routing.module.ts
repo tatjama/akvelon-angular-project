@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+//Components
 import { ProjectsComponent } from './projects/projects.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';

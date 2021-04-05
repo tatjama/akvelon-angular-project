@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
+
+//Routing
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+
+//Http
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 

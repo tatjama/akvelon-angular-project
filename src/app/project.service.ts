@@ -18,7 +18,6 @@ import { MessageService } from './message.service';
 export class ProjectService {
 
   private projectsUrl = 'http://localhost:3000/projects';
-  private tasksUrl = 'http://localhost:3000/tasks';
 
   constructor(private http: HttpClient,  private messageService: MessageService) { }
 
@@ -45,19 +44,16 @@ export class ProjectService {
           tap(_ => this.log(`fetched project id=${id}`)),
           catchError(this.handleError<Project>(`getProject id=${id}`))
         );
-    const project = PROJECTS.find(p => p.id === id) as Project;
-    this.messageService.add(`ProjectService: fetched project id=${id}`);
-    return of(project);
   }
 
   /** PUT: update the project on the server */
-updateProject(project: Project): Observable<any> {
-  const url = `${this.projectsUrl}/${project.id}`;
-  return this.http.put(url, project, this.httpOptions).pipe(
-    tap(_ => this.log(`updated project id=${project.id}`)),
-    catchError(this.handleError<any>('updateProject'))
-  );
-}
+  updateProject(project: Project): Observable<any> {
+    const url = `${this.projectsUrl}/${project.id}`;
+    return this.http.put(url, project, this.httpOptions).pipe(
+      tap(_ => this.log(`updated project id=${project.id}`)),
+      catchError(this.handleError<any>('updateProject'))
+    );
+  }
 
   /** POST: add a new project to the server */
     addProject(project: Project): Observable<Project> {
