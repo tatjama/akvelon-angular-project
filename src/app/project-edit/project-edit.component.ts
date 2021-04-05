@@ -14,8 +14,8 @@ export class ProjectEditComponent implements OnInit {
   title: string = "Add a new project";
   projects: Project[] = [];
   addedProject: Project = new Project();
-  @Output()
-  addedProjectEvent = new EventEmitter();
+  //@Output()
+  //addedProjectEvent = new EventEmitter();
 
   constructor(private projectService: ProjectService) { }
 
@@ -37,7 +37,7 @@ export class ProjectEditComponent implements OnInit {
     this.projectService.addProject(this.addedProject)
       .subscribe(project => {
         this.projects.push(project);
-        this.addedProjectEvent.emit();
+       // this.addedProjectEvent.emit();
       });
 
   }
