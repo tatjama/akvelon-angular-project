@@ -1,0 +1,17 @@
+<p>task-edit works!</p>
+<div>
+  <label>Title</label>
+  <br>
+  <input type="text" [(ngModel)] = "addedTask.title"/>
+  <br>
+  <label>description:</label>
+  <br>
+  <input type="text" [(ngModel)] = "addedTask.description"/>
+  <br>
+  <label>Estimate:</label>
+  <br>
+  <input type="number" [(ngModel)] = "addedTask.estimate"/>
+  <br>
+  <button (click) = "onSubmit()">Submit</button>
+</div>
+

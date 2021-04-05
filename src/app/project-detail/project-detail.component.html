@@ -13,7 +13,10 @@
     <input type="text" placeholder="name" id="project-name" [(ngModel)]= "selectedProject.name" />
     <button class="save" type="button" (click) = "save()">Save</button>
   </div>
-</div>
 
+  <a routerLink = "/addtask/{{ project.id }}">
+    <button class="details"  > Add task</button>
+  </a>
+</div>
 <button class="back" (click) = "goBack()">go back</button>
 

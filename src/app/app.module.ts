@@ -17,6 +17,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
 import { ProjectEditComponent } from './project-edit/project-edit.component';
+import { TaskEditComponent } from './task-edit/task-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProjectEditComponent } from './project-edit/project-edit.component';
     MessagesComponent,
     TasksComponent,
     TaskDetailComponent,
-    ProjectEditComponent
+    ProjectEditComponent,
+    TaskEditComponent
   ],
   imports: [
     BrowserModule,

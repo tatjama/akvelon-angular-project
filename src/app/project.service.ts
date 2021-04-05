@@ -11,6 +11,7 @@ import { Project } from './project';
 
 //Service
 import { MessageService } from './message.service';
+import { Task } from './task';
 
 @Injectable({
   providedIn: 'root'
@@ -60,6 +61,13 @@ export class ProjectService {
     return this.http.post<Project>(this.projectsUrl, project, this.httpOptions).pipe(
     tap((newProject: Project) => this.log(`added project w/ id=${newProject.id}`)),
     catchError(this.handleError<Project>('addProject'))
+  );
+}
+  /** POST: add a new task to the server */
+    addTask(task: Task): Observable<Task> {
+    return this.http.post<Task>(this.projectsUrl, task, this.httpOptions).pipe(
+    tap((newTask: Task) => this.log(`added task w/ id=${newTask.id}`)),
+    catchError(this.handleError<Task>('addTask'))
   );
 }
 
