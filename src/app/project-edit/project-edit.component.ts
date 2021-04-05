@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
+//service
 import { ProjectService } from '../project.service';
 
 import { Project } from '../project';
