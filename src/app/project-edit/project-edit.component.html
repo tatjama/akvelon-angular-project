@@ -1,0 +1,12 @@
+<header>
+  <h2>{{ title  | uppercase}}</h2>
+</header>
+<div>
+  <label id="new-project">Project name: </label>
+  <input for="new-project" #projectName [(ngModel)] = "addedProject.name" />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(); projectName.value=''">
+    Add Project
+  </button>
+</div>

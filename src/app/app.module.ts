@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessagesComponent } from './messages/messages.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
+import { ProjectEditComponent } from './project-edit/project-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TaskDetailComponent } from './task-detail/task-detail.component';
     DashboardComponent,
     MessagesComponent,
     TasksComponent,
-    TaskDetailComponent
+    TaskDetailComponent,
+    ProjectEditComponent
   ],
   imports: [
     BrowserModule,
