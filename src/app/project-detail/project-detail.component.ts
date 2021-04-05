@@ -15,7 +15,9 @@ import { Project } from '../project';
 })
 export class ProjectDetailComponent implements OnInit {
 
-   project?: Project;
+   project: Project;
+   //selectedProject: Project = new Project();
+   selectedProject: Project;
 
   constructor(
       private route: ActivatedRoute,
@@ -30,7 +32,10 @@ export class ProjectDetailComponent implements OnInit {
   getProject(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.projectService.getProject(id)
-    .subscribe(project => this.project = project);
+    .subscribe(project => {
+      this.project = project;
+      this.selectedProject = Object.assign({}, project)
+    });
   }
 
   goBack(): void {
@@ -38,7 +43,7 @@ export class ProjectDetailComponent implements OnInit {
   }
 
   save(): void {
-    this.projectService.updateProject(this.project)
+    this.projectService.updateProject(this.selectedProject)
       .subscribe(() => this.goBack());
   }
 
