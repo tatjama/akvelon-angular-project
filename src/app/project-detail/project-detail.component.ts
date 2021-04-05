@@ -15,7 +15,7 @@ import { Project } from '../project';
 })
 export class ProjectDetailComponent implements OnInit {
 
-  @Input() project: Project;
+   project?: Project;
 
   constructor(
       private route: ActivatedRoute,
@@ -35,6 +35,11 @@ export class ProjectDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    this.projectService.updateProject(this.project)
+      .subscribe(() => this.goBack());
   }
 
 }

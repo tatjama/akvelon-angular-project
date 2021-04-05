@@ -50,6 +50,15 @@ export class ProjectService {
     return of(project);
   }
 
+  /** PUT: update the project on the server */
+updateProject(project: Project): Observable<any> {
+  const url = `${this.projectsUrl}/${project.id}`;
+  return this.http.put(url, project, this.httpOptions).pipe(
+    tap(_ => this.log(`updated project id=${project.id}`)),
+    catchError(this.handleError<any>('updateProject'))
+  );
+}
+
   /** POST: add a new project to the server */
     addProject(project: Project): Observable<Project> {
     return this.http.post<Project>(this.projectsUrl, project, this.httpOptions).pipe(

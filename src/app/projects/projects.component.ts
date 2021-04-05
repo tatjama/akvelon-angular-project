@@ -14,7 +14,10 @@ import { ProjectService } from '../project.service';
 export class ProjectsComponent implements OnInit {
     title: string = 'Projects';
     projects: Project[] = [];
-    selectedProject: Project;
+    selectedProject: Project = new Project();
+   // id = this.genId(this.projects);
+
+
   constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
@@ -26,22 +29,32 @@ export class ProjectsComponent implements OnInit {
         .subscribe((data) => this.projects = data);
   }
 
-  add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.projectService.addProject({ name } as Project)
+
+
+  add(): void {
+    //name = name.trim();
+   //const tempProject = new Project();
+   //this.selectedProject.name = name;
+   this.selectedProject.date = new Date().toUTCString();
+
+
+    if (!this.selectedProject.name) { return; }
+    this.projectService.addProject(this.selectedProject)
       .subscribe(project => {
         this.projects.push(project);
       });
   }
 
-  onSelect(project: Project){
+   /*genId(projects: Project[]): number {
+    return projects.length>0 ? Math.max(...projects.map(project => project.id))+1: 1;
+   }*/
+  //onSelect(project: Project){
     //console.log((<HTMLElement>event.target).id);
     //console.log(project)
-    this.selectedProject = project;
+    //this.selectedProject = project;
     //this.projectIdToShow = (<HTMLElement>event.target).id;
     //this.isShowDetails = !this.isShowDetails
     //dashboard.isShowDetails = true;
-  }
+//  }
 
 }
