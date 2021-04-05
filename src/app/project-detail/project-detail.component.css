@@ -3,3 +3,29 @@
   padding: 15px;
   margin: 10px auto;
 }
+.details{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+p{
+  font-weight:bold;
+}
+.back{
+  background-color: #369;
+  color: #fff;
+}
+.back:hover{
+  background-color: #c8ddf1;
+  color: #000;
+}
+.save{
+  background-color:#038c96;
+  color: #fff;
+  margin: 5px;
+}
+.save:hover{
+  background-color: #7bdae0;
+  color: #000;
+}

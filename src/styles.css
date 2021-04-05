@@ -24,6 +24,8 @@ h3{
 }
 p{
   font-size: 0.87em;
+  color: #369;
+  padding: 10px;
 }
 
 button{
@@ -31,4 +33,11 @@ button{
   border-radius:5px;
   border: none;
   cursor: pointer;
+}
+label{
+  color: #369;
+}
+input{
+  padding: 5px;
+  margin: 5px 0px;
 }

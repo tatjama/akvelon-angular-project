@@ -24,3 +24,13 @@ li{
 .selected span{
   color: #eb82b3;
 }
+.add button{
+  background-color: #eb82b3;
+  color: #fff;
+  float: right;
+  margin: 5px;
+}
+.add button:hover{
+  background-color: #f5b2d1;
+  color: #000;
+}

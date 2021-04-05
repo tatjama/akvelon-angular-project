@@ -1,0 +1,18 @@
+nav{
+  background-color: #369;
+  padding: 5px;
+  margin: 10px auto;
+}
+nav a{
+  color: #fff;
+  text-decoration: none;
+  margin: 5px 20px;
+}
+nav a:hover{
+  background-color: #fff;
+  color: #369;
+  padding: 5px;
+}
+.wrapper{
+  max-width: 500px;
+}

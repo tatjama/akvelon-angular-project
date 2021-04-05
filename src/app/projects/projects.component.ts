@@ -15,7 +15,6 @@ export class ProjectsComponent implements OnInit {
     title: string = 'Projects';
     projects: Project[] = [];
     selectedProject: Project = new Project();
-   // id = this.genId(this.projects);
 
 
   constructor(private projectService: ProjectService) { }
@@ -36,7 +35,6 @@ export class ProjectsComponent implements OnInit {
    //const tempProject = new Project();
    //this.selectedProject.name = name;
    this.selectedProject.date = new Date().toUTCString();
-
 
     if (!this.selectedProject.name) { return; }
     this.projectService.addProject(this.selectedProject)

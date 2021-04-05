@@ -2,18 +2,18 @@
   <header>
       <h1> {{ project.name |uppercase }} </h1>
   </header>
-  <p> id: {{ project.id }} </p>
-  <p> date: {{ project.date }} </p>
+  <div class="details">
+    <p> id: {{ project.id }} </p>
+    <p> date: {{ project.date }} </p>
+  </div>
   <app-tasks [tasks] = "project.tasks"></app-tasks>
-  <!--<ol>
-    <li *ngFor="let task of project.tasks"> {{task.title}} </li>
-  </ol>-->
   <div>
-    <label for="project-name"></label>
+    <label for="project-name">Change project name:</label>
+    <br>
     <input type="text" placeholder="name" id="project-name" [(ngModel)]= "selectedProject.name" />
-    <button type="button" (click) = "save()">Save</button>
+    <button class="save" type="button" (click) = "save()">Save</button>
   </div>
 </div>
 
-<button (click) = "goBack()">go back</button>
+<button class="back" (click) = "goBack()">go back</button>
 

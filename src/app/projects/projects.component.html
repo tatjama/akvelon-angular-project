@@ -1,27 +1,28 @@
-<header>
-  <h2>{{ title | uppercase }} </h2>
-</header>
-<div>
-  <label id="new-project">Project name: </label>
-  <input for="new-project" #projectName [(ngModel)] = "selectedProject.name" />
 
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button class="add-button" (click)="add(); projectName.value=''">
-    Add Project
-  </button>
-</div>
-<ul class="projects">
-  <li *ngFor="let project of projects">
-
+<div class="wrapper">
+  <ul class="projects">
+    <li *ngFor="let project of projects">
       <div class="project">
         <span>{{ project.name }}</span>
         <a routerLink = "/projectdetail/{{ project.id }}">
           <button class="details" [id]="project.id" [project] = "selectedProject" > Show Details</button>
         </a>
       </div>
+    </li>
+  </ul>
+  <header>
+    <h2>ADD NEW PROJECT </h2>
+  </header>
+  <div class="add">
+    <label id="new-project">Project name: </label>
+    <br>
+    <input for="new-project" #projectName [(ngModel)] = "selectedProject.name" />
 
-  </li>
-
-</ul>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button class="add-button" (click)="add(); projectName.value=''">
+      Add Project
+    </button>
+  </div>
 <!--<app-project-detail [project] = "selectedProject"></app-project-detail>-->
-<app-project-edit  ></app-project-edit>
+<!--<app-project-edit  ></app-project-edit>-->
+</div>

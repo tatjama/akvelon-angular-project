@@ -1,14 +1,23 @@
 .message{
   color: #06a590;
-  position: fixed;
-  bottom: 10px;
-  display: flex;
-  align-items: center;
   z-index: -1;
+  margin-top: 50px;
+  border:#06a590 1px solid;
+  padding: 5px;
+  border-radius:5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -ms-border-radius:5px;
+  -o-border-radius:5px;
+}
+.message p{
+  color:#06a590;
+  padding:3px;
 }
 .message button{
   background-color: #06a590;
   color: #fff ;
+  float: right;
   margin-left: 15px;
   padding: 10px 15px;
   border-radius: 50%;
