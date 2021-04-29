@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Project } from '../project';
+
+import { Project } from './project.model';
 
 //Service
-import { ProjectService } from '../project.service';
+import { ProjectService } from './project.service';
 
 @Component({
   selector: 'app-projects',
@@ -27,13 +28,4 @@ export class ProjectsComponent implements OnInit {
         .subscribe((data) => this.projects = data);
   }
 
-  add(): void {
-   this.selectedProject.date = new Date().toUTCString();
-
-    if (!this.selectedProject.name) { return; }
-    this.projectService.addProject(this.selectedProject)
-      .subscribe(project => {
-        this.projects.push(project);
-      });
-  }
 }

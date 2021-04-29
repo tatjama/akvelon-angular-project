@@ -1,0 +1,11 @@
+.update-project-form{
+  margin-top: 70px;
+}
+.update-project-form input[type="button"]{
+  background-color: #06a590;
+  color: #fff;
+}
+.update-project-form input[type="button"]:hover{
+  background-color:#84ddd1;
+  color:#000;
+}

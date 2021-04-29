@@ -1,0 +1,10 @@
+<div  class="form update-project-form">
+  <header>
+    <h2> {{ title | uppercase }} </h2>
+  </header>
+  <div>
+    <label for="project-name"></label>
+    <input type="text" placeholder="name" id="project-name" [(ngModel)]= "selectedProject.name" />
+    <input type="button" value="Save" (click) = "onSubmit()"/>
+  </div>
+</div>

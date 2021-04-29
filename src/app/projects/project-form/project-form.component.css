@@ -1,0 +1,12 @@
+.project-form input[type="text"]{
+  background-color: #fdd1e6;
+}
+.project-form input[type="button"]{
+  background-color: #eb82b3;
+  color: #fff;
+}
+.project-form input[type="button"]:hover{
+  background-color: #f3dee8;
+  color: #000;
+}
+

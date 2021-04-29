@@ -20,12 +20,12 @@ h2{
   color: #399;
 }
 h3{
-  font-size: 1em
+  font-size: 1em;
+  color: #369;
 }
 p{
   font-size: 0.87em;
-  color: #369;
-  padding: 10px;
+  color:#369;
 }
 
 button{
@@ -34,10 +34,35 @@ button{
   border: none;
   cursor: pointer;
 }
-label{
+.list{
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  margin: auto;
+}
+.form{
+  width: 250px;
+  margin: 10px auto;
+}
+.form label{
   color: #369;
 }
 input{
-  padding: 5px;
-  margin: 5px 0px;
+  width: 100%;
+  padding: 7px;
+  margin: 5px 10px 5px 0px;
+  border: none;
+  outline: none;
+}
+.form input[type="button"]{
+  padding: 8px;
+  border-radius:5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+@media screen and (max-width:768px){
+  .list{
+    width: 100%;
+  }
 }

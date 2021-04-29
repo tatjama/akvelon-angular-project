@@ -1,19 +1,22 @@
-.task{
-  display: flex;
-  align-items: center;
-  justify-content:space-around;
+.task-list{
   background-color: #fac7df;
   padding: 10px;
   margin: 10px auto;
+  width: 100%;
 }
-.task button{
+.task-list button{
   background-color: #eb82b3;
   color: #fff;
 }
-.task button:hover{
+.task-list button:hover{
   background-color: #fafafa;
   color: #000;
 }
 ol{
   list-style: none;
+}
+@media screen and (max-width:768px){
+  .task{
+    justify-content:space-between;
+  }
 }

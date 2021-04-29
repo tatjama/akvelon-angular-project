@@ -1,6 +1,6 @@
 <ol>
   <li *ngFor="let task of tasks">
-    <div class="task">
+    <div class="list task-list">
         <h2> {{ task.title }} </h2>
         <button type="button" (click)="onSelect(task)"> Task detail </button>
     </div>

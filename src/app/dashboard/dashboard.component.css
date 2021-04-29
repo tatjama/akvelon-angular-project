@@ -1,0 +1,17 @@
+.section{
+  width: 40%;
+  padding: 40px 20px;
+  margin:20px auto;
+}
+.section a{
+  text-decoration:none;
+  color:#399;
+}
+.section a:hover{
+  color: #fd37b1;
+}
+@media screen and (max-width:768px){
+  .section{
+    width: 100%;
+  }
+}

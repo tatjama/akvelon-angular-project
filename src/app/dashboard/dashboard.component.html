@@ -1,12 +1,19 @@
-<!--<app-projects></app-projects>
-<app-project-detail  *ngIf="selectedProject"></app-project-detail>-->
-<header>
-  <h2>{{ title }}</h2>
-</header>
-<p>This is the repo with list of projects and their tasks. List of projects is getting from API server
-  <br>
-  http://localhost:3000.
-  <br>
-  API server is created at <br>
-  https://github.com/tatjama/jsonserver
-</p>
+<div class="dashboard">
+  <header>
+    <h2>{{ title }}</h2>
+  </header>
+  <div class="section">
+    <p>This is the repo with list of projects and their tasks. List of projects is getting from API server
+    <br>
+    <a href="https://github.com/tatjama/jsonserver">https://github.com/tatjama/jsonserver</a>
+    <br><br>
+    Run server with
+    <br>
+    npm run json:server
+    <br><br>
+    Find it on
+    <br>
+    <a href="http://localhost:3000">http://localhost:3000</a>.
+    </p>
+  </div>
+</div>

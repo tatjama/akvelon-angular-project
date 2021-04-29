@@ -1,0 +1,44 @@
+<div class="project-detail" *ngIf="project">
+  <header>
+      <h1> {{ project.name |uppercase }} </h1>
+  </header>
+  <div class="list project-detail-list">
+    <h3> ID: {{ project.id  }} </h3>
+    <h3> Date: {{ project.date }} </h3>
+  </div>
+  <app-tasks [tasks] = "project.tasks"></app-tasks>
+  <div class="form ">
+
+    <input
+      type="button"
+      class="show"
+      [class.close] = "isShowingAddForm === true"
+      value = "Add new task"
+      #addButton
+      (click) = "showAddForm(); isShowingAddForm? addButton.value = 'x': addButton.value = 'Add new task'"
+      />
+    <app-task-form
+      [project] = "project"
+      *ngIf = "isShowingAddForm"
+      (addedTaskEvent) = "addTask($event)"
+       ></app-task-form>
+
+       <input
+      type="button"
+      class="show"
+      [class.close] = "isShowingUpdateForm === true"
+      value = "Update project name"
+      #updateButton
+      (click) = "showUpdateForm();
+      isShowingUpdateForm? updateButton.value = 'x': updateButton.value = 'Update project name'"
+      />
+    <app-project-update
+       [selectedProject] = "selectedProject"
+       *ngIf="isShowingUpdateForm"
+       (updateProjectEvent) = "save($event)"
+       ></app-project-update>
+  </div>
+</div>
+
+<button class="back-button" (click) = "goBack()">go back</button>
+

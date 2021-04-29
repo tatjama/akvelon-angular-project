@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -6,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  title: string = "Welcome to the AKVELON project"
+  title: string = "Welcome to the AKVELON project";
+
   constructor() { }
 
   ngOnInit(): void {

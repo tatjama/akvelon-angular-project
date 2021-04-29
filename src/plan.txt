@@ -30,17 +30,19 @@ I. COMPONENTS
 7. Messages Component
   - show message from project service
 
-II. INTERFACES
-1. Project interface
+II. MODELI
+1. Project model
   -id,
   -name,
-  -date
-2. Task interface
+  -date,
+  -tasks
+2. Task model
   -id,
   -title,
   -description,
   -date,
-  -estimate
+  -estimate,
+  -project
 
 III. SERVICES
 1. Project service

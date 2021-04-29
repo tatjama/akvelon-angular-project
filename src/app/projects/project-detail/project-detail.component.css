@@ -1,0 +1,53 @@
+.project-detail{
+  background-color: #f3dee8;
+  width: 40%;
+  padding: 15px;
+  margin: 10px auto;
+}
+.project-detail-list{
+  width: 100%;
+}
+.back-button{
+  background-color: #369;
+  color: #fff;
+  cursor: pointer;
+  float: right;
+}
+.back-button:hover{
+  background-color: #b6cbe0;
+  color:#369;
+  margin-top: 10px;
+}
+.show{
+  background-color: #eb82b3;
+  color: #fff;
+}
+.show:hover{
+  background-color: #fdd1e6;
+  background-color: #fff;
+  color: #000;
+}
+.close{
+  background-color: #f3dee8;
+  color: #399;
+  float: right;
+  padding: 0px;
+  width:30px;
+  font-size: 1.2rem;
+  font-weight:bold;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.close:hover{
+  background-color: #f3dee8;
+  color:#84ddd1;
+}
+@media screen and (max-width:768px){
+  .project-detail{
+    width: 100%;
+  }
+}
+
